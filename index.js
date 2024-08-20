@@ -11,6 +11,7 @@ app.use(express.json());
 // Habilitar CORS para todas las rutas
 app.use(cors()); // Activar CORS
 
+
 // async function openWebPage(){
 //  const browser= await  puppeteer.launch({
 //     headless: 'shell',
