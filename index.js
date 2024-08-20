@@ -74,7 +74,7 @@ app.post('/api/manga', async (req, res) => {
         
         // Navegar a la URL proporcionada
         await page.goto(url);
-        await page.waitForSelector('.upload-link');
+        //await page.waitForSelector('.upload-link');
 
         const elementos = await page.evaluate(() => {
             const nodos = document.querySelectorAll('.upload-link');
