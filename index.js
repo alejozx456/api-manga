@@ -71,10 +71,12 @@ app.post('/api/manga', async (req, res) => {
                   : puppeteer.executablePath(),
         });
         const page = await browser.newPage();
+        const navigationPromise = page.waitForNavigation({waitUntil:"domcontentloaded"});
         
         // Navegar a la URL proporcionada
         await page.goto(url);
         //await page.waitForSelector('.upload-link');
+        await navigationPromise;
 
         const elementos = await page.evaluate(() => {
             const nodos = document.querySelectorAll('.upload-link');
