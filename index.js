@@ -75,7 +75,7 @@ app.post('/api/manga', async (req, res) => {
         
         // Navegar a la URL proporcionada
         await page.goto(url,{waitUntil:'networkidle2'});
-        await page.waitForSelector('.upload-link');
+        await page.waitForSelector('.upload-link',{timeout:120000});
         //await navigationPromise;
 
         const elementos = await page.evaluate(() => {
