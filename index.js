@@ -59,6 +59,7 @@ app.post('/api/manga', async (req, res) => {
 
     try {
         const browser = await puppeteer.launch({ 
+            headless:'new',
             args: [
                 "--disable-setuid-sandbox",
                 "--no-sandbox",
